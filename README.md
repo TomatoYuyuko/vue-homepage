@@ -1,5 +1,8 @@
 # vue-project
 
+###一个不懂艺术的程序员搞的先锋艺术作品((((✿ﾟ▽ﾟ)ノ
+###个人主页，没啥特别的，写来玩玩
+
 ## Project setup
 ```
 npm install
@@ -14,16 +17,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
