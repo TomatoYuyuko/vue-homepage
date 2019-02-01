@@ -4,12 +4,12 @@
         <Win98Dialog @confirm="toggleLayer()" v-show="showConfirm"></Win98Dialog>
         <div style="margin-bottom: 10em">
             <el-row>
-                <el-col :span="24"><h1 class="text-shadow-white"><u>{{ msg }}</u></h1></el-col>
+                <el-col :span="24"><h1 class="text-shadow-white"><u>{{ title }}</u></h1></el-col>
             </el-row>
             <el-row>
                 <el-col :span="24">
                     <span class="menu-bar">
-                        <a href="#" @click="jumpTo()" class="jump-tag text-shadow-white-sm">博客</a><span
+                        <a href="#" @click="jumpTo('Blog')" class="jump-tag text-shadow-white-sm">博客</a><span
                             class="abs">|</span>
                         <a href="#" @click="jumpTo()" class="jump-tag text-shadow-white-sm">联系</a><span
                             class="abs">|</span>
@@ -23,13 +23,14 @@
     </div>
 </template>
 <script>
-    import Win98Dialog from "./Win98Dialog";
+    import Win98Dialog from "../components/Win98Dialog";
 
     export default {
         name: 'Main',
         components: {Win98Dialog},
         data: function () {
             return {
+                title: 'Life is Elsewhere',
                 showConfirm: false,
                 showMask: false
             }
@@ -38,8 +39,14 @@
             msg: String
         },
         methods: {
-            jumpTo: function () {
-                this.toggleLayer()
+            jumpTo: function (address) {
+                if (!address) {
+                    this.toggleLayer()
+                } else {
+                    console.log(address);
+                    this.$router.push({path: '/' + address})
+                }
+
             },
             toggleLayer: function () {
                 this.showMask = !this.showMask;
@@ -50,9 +57,7 @@
             document.getElementsByClassName('tr-html')[0].className += ' fade-away';
             setTimeout(function () {
                 document.getElementsByClassName('tr-html')[0].remove();
-            }, 500)
-
-
+            }, 800)
         }
     }
 </script>
@@ -62,6 +67,7 @@
         .el-row u {
             position: relative;
             font-size: 36px !important;
+            font-style: italic
         }
 
         a {
@@ -87,6 +93,7 @@
     h1 {
         margin-bottom: 10px;
         font-size: 4em;
+        font-style: italic;
     //font-family: "Monoton";
     }
 

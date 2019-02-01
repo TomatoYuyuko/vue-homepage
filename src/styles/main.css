@@ -41,7 +41,7 @@
 /*样式*/
 /*加载界面淡出*/
 .fade-away {
-    animation: loading-fade-in 500ms ease infinite;
+    animation: loading-fade-in 800ms ease infinite;
 }
 
 /*遮罩层*/
