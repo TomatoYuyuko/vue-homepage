@@ -5,7 +5,7 @@
                 <transition name="el-fade-in-linear">
                     <Loading v-show="showLoading" :loading-msg="loadingMsg"></Loading>
                 </transition>
-
+                <!--<Main msg="Life Is Elsewhere"/>-->
                 <router-view></router-view>
             </el-main>
         </el-container>
@@ -13,13 +13,15 @@
 </template>
 
 <script>
+    //import Main from './components/Main.vue'
     import Loading from './components/Loading.vue'
-    import 'element-ui/lib/theme-chalk/base.css';
-
+    import router from './router/router'
     export default {
         name: 'app',
+        router,
         components: {
             Loading,
+            //Main
         },
         data: function () {
             return {

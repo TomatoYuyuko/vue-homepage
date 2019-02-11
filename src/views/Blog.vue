@@ -1,6 +1,6 @@
 <template>
-    <div>
-
+    <div class="vc max-height">
+        <div class="mask" v-show="showMask"></div>
     </div>
 </template>
 

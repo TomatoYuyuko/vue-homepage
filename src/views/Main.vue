@@ -4,18 +4,18 @@
         <Win98Dialog @confirm="toggleLayer()" v-show="showConfirm"></Win98Dialog>
         <div style="margin-bottom: 10em">
             <el-row>
-                <el-col :span="24"><h1 class="text-shadow-white"><u>{{ title }}</u></h1></el-col>
+                <el-col :span="24"><h1 class="text-shadow-white"><u>Life Is Elsewhere</u></h1></el-col>
             </el-row>
             <el-row>
                 <el-col :span="24">
                     <span class="menu-bar">
-                        <a href="#" @click="jumpTo('Blog')" class="jump-tag text-shadow-white-sm">博客</a><span
+                        <a href="#" @click="jumpTo(0)" class="jump-tag text-shadow-white-sm">博客</a><span
                             class="abs">|</span>
-                        <a href="#" @click="jumpTo()" class="jump-tag text-shadow-white-sm">联系</a><span
+                        <a href="#" @click="jumpTo(2)" class="jump-tag text-shadow-white-sm">联系</a><span
                             class="abs">|</span>
-                        <a href="#" @click="jumpTo()" class="jump-tag text-shadow-white-sm">GitHub</a><span
+                        <a href="#" @click="jumpTo(3)" class="jump-tag text-shadow-white-sm">GitHub</a><span
                             class="abs">|</span>
-                        <a href="#" @click="jumpTo()" class="jump-tag text-shadow-white-sm">关于</a>
+                        <a href="#" @click="jumpTo(0)" class="jump-tag text-shadow-white-sm">关于</a>
                     </span>
                 </el-col>
             </el-row>
@@ -30,21 +30,33 @@
         components: {Win98Dialog},
         data: function () {
             return {
-                title: 'Life is Elsewhere',
                 showConfirm: false,
                 showMask: false
             }
         },
-        props: {
-            msg: String
-        },
+        props: {},
         methods: {
-            jumpTo: function (address) {
-                if (!address) {
-                    this.toggleLayer()
-                } else {
-                    console.log(address);
-                    this.$router.push({path: '/' + address})
+            jumpTo: function (target) {
+                switch (target) {
+                    case 1: {
+                        break
+                    }
+                    case 2: {
+                        this.$router.push({
+                            path: '/contact',
+                        });
+                        break
+                    }
+                    case 3: {
+                        window.open('https://github.com/TomatoYuyuko');
+                        break
+                    }
+                    case 4: {
+                        break
+                    }
+                    default: {
+                        this.toggleLayer()
+                    }
                 }
 
             },
@@ -54,10 +66,14 @@
             }
         },
         mounted: function () {
-            document.getElementsByClassName('tr-html')[0].className += ' fade-away';
-            setTimeout(function () {
-                document.getElementsByClassName('tr-html')[0].remove();
-            }, 800)
+            if (document.getElementsByClassName('tr-html')[0]) {
+
+
+                document.getElementsByClassName('tr-html')[0].className += ' fade-away';
+                setTimeout(function () {
+                    document.getElementsByClassName('tr-html')[0].remove();
+                }, 500)
+            }
         }
     }
 </script>
@@ -67,7 +83,6 @@
         .el-row u {
             position: relative;
             font-size: 36px !important;
-            font-style: italic
         }
 
         a {
@@ -93,7 +108,6 @@
     h1 {
         margin-bottom: 10px;
         font-size: 4em;
-        font-style: italic;
     //font-family: "Monoton";
     }
 

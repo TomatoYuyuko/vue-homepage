@@ -13,7 +13,7 @@
     "lodash": "^4.17.11",
     "nes.css": "^1.0.0",
     "vue": "^2.5.21",
-    "vue-router": "^3.0.1",
+    "vue-router": "^3.0.2",
     "windows_98.css": "0.0.1"
   },
   "devDependencies": {
@@ -34,9 +34,7 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {
-      "no-console": "off"
-    },
+    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
     }
