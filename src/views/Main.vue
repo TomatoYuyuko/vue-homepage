@@ -4,18 +4,27 @@
         <Win98Dialog @confirm="toggleLayer()" v-show="showConfirm"></Win98Dialog>
         <div style="margin-bottom: 10em">
             <el-row>
-                <el-col :span="24"><h1 class="text-shadow-white"><u>Life Is Elsewhere</u></h1></el-col>
+                <el-col :span="24"><h1 class="text-shadow-white"><u>Life is ElseWhere</u></h1></el-col>
             </el-row>
             <el-row>
                 <el-col :span="24">
-                    <span class="menu-bar">
-                        <a href="#" @click="jumpTo(0)" class="jump-tag text-shadow-white-sm">博客</a><span
-                            class="abs">|</span>
-                        <a href="#" @click="jumpTo(2)" class="jump-tag text-shadow-white-sm">联系</a><span
-                            class="abs">|</span>
-                        <a href="#" @click="jumpTo(3)" class="jump-tag text-shadow-white-sm">GitHub</a><span
-                            class="abs">|</span>
-                        <a href="#" @click="jumpTo(0)" class="jump-tag text-shadow-white-sm">关于</a>
+                    <span class="menu-bar nes-container">
+                        <label>
+                            <input type="radio" @click="jumpTo(0)" class="nes-radio jump-tag"
+                                   v-model="checkedStatus" value="blog"><span class="jump-tag">博客</span>
+                        </label>
+                        <label>
+                            <input type="radio" @click="jumpTo(2)" class="nes-radio jump-tag"
+                                   v-model="checkedStatus" value="contact"><span class="jump-tag">联系</span>
+                        </label>
+                        <label>
+                            <input type="radio" @click="jumpTo(3)" class="nes-radio jump-tag"
+                                   v-model="checkedStatus" value="gh"><span class="jump-tag">GitHub</span>
+                        </label>
+                        <label>
+                            <input type="radio" @click="jumpTo(0)" class="nes-radio jump-tag"
+                                   v-model="checkedStatus" value="about"><span class="jump-tag">关于</span>
+                    </label>
                     </span>
                 </el-col>
             </el-row>
@@ -24,6 +33,7 @@
 </template>
 <script>
     import Win98Dialog from "../components/Win98Dialog";
+    import '../../node_modules/nes.css/css/nes.css'
 
     export default {
         name: 'Main',
@@ -31,7 +41,8 @@
         data: function () {
             return {
                 showConfirm: false,
-                showMask: false
+                showMask: false,
+                checkedStatus: 'blog'
             }
         },
         props: {},
@@ -65,10 +76,11 @@
                 this.showConfirm = !this.showConfirm;
             }
         },
+        created: function () {
+
+        },
         mounted: function () {
             if (document.getElementsByClassName('tr-html')[0]) {
-
-
                 document.getElementsByClassName('tr-html')[0].className += ' fade-away';
                 setTimeout(function () {
                     document.getElementsByClassName('tr-html')[0].remove();
@@ -84,15 +96,6 @@
             position: relative;
             font-size: 36px !important;
         }
-
-        a {
-            display: block;
-            text-decoration: underline;
-        }
-
-        .abs {
-            opacity: 0;
-        }
     }
 
     .menu-bar {
@@ -101,29 +104,20 @@
     }
 
     .jump-tag {
-        margin: 2px 15px;
+        margin: 2px 18px;
         font-size: 24px;
+        font-family: 'CN_8bit';
     }
 
     h1 {
         margin-bottom: 10px;
         font-size: 4em;
-    //font-family: "Monoton";
+        font-family: "CN_8bit";
     }
 
-    a:link {
-        color: #fefef9;
-    }
-
-    a:visited {
-        color: #fefef9;
-    }
-
-    a:hover {
-        color: #fefefe;
-    }
-
-    a:active {
-        color: #fefefe;
+    .nes-radio:checked + span::before {
+        color: #fff;
+        top: 2px;
+        animation: blink 1s infinite steps(1);
     }
 </style>

@@ -6,7 +6,9 @@
                     <Loading v-show="showLoading" :loading-msg="loadingMsg"></Loading>
                 </transition>
                 <!--<Main msg="Life Is Elsewhere"/>-->
-                <router-view></router-view>
+                <keep-alive>
+                    <router-view></router-view>
+                </keep-alive>
             </el-main>
         </el-container>
     </div>
@@ -16,6 +18,7 @@
     //import Main from './components/Main.vue'
     import Loading from './components/Loading.vue'
     import router from './router/router'
+
     export default {
         name: 'app',
         router,
@@ -27,13 +30,11 @@
             return {
                 showMenuList: false,
                 showLoading: false,
-                loadingMsg:'loading'
+                loadingMsg: 'loading'
             }
         },
-        methods: {
-
-        },
-        mounted:function () {
+        methods: {},
+        mounted: function () {
 
         }
     }
