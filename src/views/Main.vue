@@ -2,7 +2,7 @@
     <div class="vc max-height">
         <div class="mask" v-show="showMask"></div>
         <Win98Dialog @confirm="toggleLayer()" v-show="showConfirm"></Win98Dialog>
-        <div style="margin-bottom: 10em">
+        <div style="margin-bottom: 6em;overflow: hidden">
             <el-row>
                 <el-col :span="24"><h1 class="text-shadow-white"><u>Life is ElseWhere</u></h1></el-col>
             </el-row>
@@ -96,6 +96,10 @@
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .menu-bar {
+        font-size: 20px;
+        color: #fefef9;
+    }
     @media screen and (max-width: 500px) {
         .el-row u {
             position: relative;
