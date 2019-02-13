@@ -1,21 +1,21 @@
 /*字体*/
 @font-face {
     font-family: 'PressStart2P';
-    src: url('../../public/font/PressStart2P-Regular.ttf');
+    src: url('../assets/font/PressStart2P-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Monoton';
-    src: url('../../public/font/Monoton-Regular.ttf');
+    src: url('../assets/font/Monoton-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'CN_8bit';
-    src: url('../../public/font/CN_8bit.ttf');
+    src: url('../assets/font/CN_8bit.ttf');
     font-weight: normal;
     font-style: normal;
 }

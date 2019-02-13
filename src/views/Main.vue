@@ -84,10 +84,12 @@
         },
         mounted: function () {
             if (document.getElementsByClassName('tr-html')[0]) {
-                document.getElementsByClassName('tr-html')[0].className += ' fade-away';
+                setTimeout(function () {
+                    document.getElementsByClassName('tr-html')[0].className += ' fade-away';
+                }, 500);
                 setTimeout(function () {
                     document.getElementsByClassName('tr-html')[0].remove();
-                }, 500)
+                }, 1000)
             }
         }
     }
