@@ -4,12 +4,12 @@
             <div class="nes-container is-rounded is-dark stick-menu">
                 <div>
                     <p>QQ:648030786</p>
-                    <p>邮箱:dxmo_001@qq.com</p>
+                    <p>Mail:dxmo_001@qq.com</p>
                 </div>
                 <div>
                     <label @click="menuJump()">
                         <input type="radio" class="nes-radio" name="menu" checked="checked">
-                        <span>返回首页</span>
+                        <span>RETURN</span>
                     </label>
                 </div>
             </div>
@@ -37,6 +37,11 @@
 </script>
 
 <style scoped>
+    @media screen and (max-width: 500px) {
+        p{
+            font-size: 16px;
+        }
+    }
     .vc {
         position: relative;
     }
@@ -51,7 +56,7 @@
 
     .stick-menu {
         font-size: 24px;
-        font-family: 'CN_8bit';
+        font-family: 'PressStart2P';
         margin: 7px;
         padding: 12px 7px 7px;
         z-index: 20;

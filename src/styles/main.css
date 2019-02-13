@@ -13,13 +13,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'CN_8bit';
-    src: url('../assets/font/CN_8bit.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /*动画*/
 @keyframes loading-fade-in {
     0% {

@@ -11,11 +11,11 @@
                     <span class="menu-bar nes-container">
                         <label>
                             <input type="radio" @click="jumpTo(0)" class="nes-radio jump-tag"
-                                   v-model="checkedStatus" value="blog"><span class="jump-tag">博客</span>
+                                   v-model="checkedStatus" value="blog"><span class="jump-tag">Blog</span>
                         </label>
                         <label>
                             <input type="radio" @click="jumpTo(2)" class="nes-radio jump-tag"
-                                   v-model="checkedStatus" value="contact"><span class="jump-tag">联系</span>
+                                   v-model="checkedStatus" value="contact"><span class="jump-tag">Contact</span>
                         </label>
                         <label>
                             <input type="radio" @click="jumpTo(3)" class="nes-radio jump-tag"
@@ -23,7 +23,7 @@
                         </label>
                         <label>
                             <input type="radio" @click="jumpTo(0)" class="nes-radio jump-tag"
-                                   v-model="checkedStatus" value="about"><span class="jump-tag">关于</span>
+                                   v-model="checkedStatus" value="about"><span class="jump-tag">About</span>
                     </label>
                     </span>
                 </el-col>
@@ -114,13 +114,13 @@
     .jump-tag {
         margin: 2px 18px;
         font-size: 24px;
-        font-family: 'CN_8bit';
+        font-family: 'PressStart2P';
     }
 
     h1 {
         margin-bottom: 10px;
-        font-size: 4em;
-        font-family: "CN_8bit";
+        font-size: 2em;
+        font-family: "PressStart2P";
     }
 
     .nes-radio:checked + span::before {
