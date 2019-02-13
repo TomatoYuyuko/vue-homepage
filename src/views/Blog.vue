@@ -6,7 +6,12 @@
 
 <script>
     export default {
-        name: "Blog"
+        name: "Blog",
+        data: function () {
+            return {
+                showMask: false,
+            }
+        }
     }
 </script>
 

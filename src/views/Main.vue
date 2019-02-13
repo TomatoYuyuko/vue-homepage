@@ -50,6 +50,9 @@
             jumpTo: function (target) {
                 switch (target) {
                     case 1: {
+                        this.$router.push({
+                            path: '/blog',
+                        });
                         break
                     }
                     case 2: {
@@ -95,6 +98,9 @@
         .el-row u {
             position: relative;
             font-size: 36px !important;
+        }
+        label{
+            display: block;
         }
     }
 
