@@ -1,0 +1,44 @@
+.nes-container button,
+.nes-container [type="button"],
+.nes-container [type="reset"],
+.nes-container [type="submit"] {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+.nes-container input[type="date"],
+.nes-container input[type="time"],
+.nes-container input[type="datetime-local"],
+.nes-container input[type="month"] {
+    -webkit-appearance: listbox;
+    -moz-appearance: listbox;
+    appearance: listbox;
+}
+
+.nes-container [type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.nes-container [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.nes-container ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+.nes-container button,
+.nes-container [type="button"],
+.nes-container [type="reset"],
+.nes-container [type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

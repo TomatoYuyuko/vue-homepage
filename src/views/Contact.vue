@@ -19,6 +19,7 @@
 
 <script>
     import '../../node_modules/nes.css/css/nes.css'
+
     export default {
         name: "Contact",
         components: {},
@@ -32,16 +33,27 @@
                     path: '/'
                 });
             }
+        },
+        mounted: function () {
+            if (document.getElementsByClassName('tr-html')[0]) {
+                setTimeout(function () {
+                    document.getElementsByClassName('tr-html')[0].className += ' fade-away';
+                }, 500);
+                setTimeout(function () {
+                    document.getElementsByClassName('tr-html')[0].remove();
+                }, 1000)
+            }
         }
     }
 </script>
 
 <style scoped>
     @media screen and (max-width: 500px) {
-        p{
+        p {
             font-size: 16px;
         }
     }
+
     .vc {
         position: relative;
     }
